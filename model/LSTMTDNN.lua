@@ -72,6 +72,9 @@ function LSTMTDNN.lstmtdnn(rnn_size, n, dropout, word_vocab_size, word_vec_size,
 	        local highway_mlp = HighwayMLP.mlp(input_size_L, highway_layers)
 		highway_mlp.name = 'highway'
 		x = highway_mlp(x)
+        print('--> highway_mlp(x)')
+        print(x.output)
+        os.exit()
 	    end
 	else 
 	    x = outputs[(L-1)*2] -- prev_h
